@@ -9,21 +9,31 @@ const ingredients = [
 
 const ingredientsRef = document.querySelector('#ingredients');
 
-const elements = [];
+const items = ingredients.map((item) => {
+ const itemsEl = document.createElement('li');
+ itemsEl.classList.add('item');
+ itemsEl.textContent = item;
+ return itemsEl;
+});
 
-for (let i = 0; i < ingredients.length; i += 1) {
- const option = ingredients[i];
+console.log(items);
 
- const elementLi = document.createElement('li');
- elementLi.classList.add('item');
- elementLi.textContent = option;
+ingredientsRef.append(...items);
+//const elements = [];
 
- elements.push(elementLi);
-}
+//for (let i = 0; i < ingredients.length; i += 1) {
+//const option = ingredients[i];
 
-console.log(elements);
+//const elementLi = document.createElement('li');
+//elementLi.classList.add('item');
+//elementLi.textContent = option;
 
-ingredientsRef.append(...elements);
+//elements.push(elementLi);
+//}
+
+//console.log(elements);
+
+//ingredientsRef.append(...elements);
 
 //const ingredientsRef = document.querySelector('li');
 //const ingredientsRef.classList.add('item');

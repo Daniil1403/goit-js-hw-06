@@ -15,11 +15,12 @@ const images = [
 
 const ulEl = document.querySelector('.gallery');
 
-for (let i = 0; i < images.length; i += 1) {
- const option = images[i];
-}
+const elements = images
+ .map(
+  (image) =>
+   `<li class='list-item'><img src ='${image.url}' alt = '${image.alt}' width = '400 px'>`
+ )
+ .join('');
 
-ulEl.insertAdjacentHTML(
- 'afterbegin',
- '<li>images.url</li> <li>images[1]</li> <li>images[2]</li>'
-);
+ulEl.insertAdjacentHTML('beforeend', elements);
+console.log(elements);
