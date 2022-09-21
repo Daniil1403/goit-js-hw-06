@@ -1,11 +1,16 @@
-const loginForm = document.querySelector('.login-form');
-loginForm.addEventListener('submit', OnSubmit);
-function OnSubmit(evt) {
- evt.preventDefault();
- console.dir(evt.currentTarget);
- const { email, password } = evt.currentTarget.elements;
- const data = {
-  email: email.value,
-  password: password.value,
- };
+const user = {};
+const form = document.querySelector('.login-form');
+
+form.addEventListener('submit', handleSubmit);
+
+function handleSubmit(ev) {
+ ev.preventDefault();
+ if (form.elements.password.value === '' || form.elements.email.value === '') {
+  alert('NANI!!!!!?????');
+  return;
+ }
+ user.email = form.elements.email.value;
+ user.password = form.elements.password.value;
+ console.log(user);
+ form.reset();
 }

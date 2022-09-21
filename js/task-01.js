@@ -1,14 +1,22 @@
-const navLiEl = document.querySelectorAll('.item');
-console.log('Number of categories:', navLiEl.length);
+const listCategory = document.querySelectorAll('li.item');
+console.log('Number of categories:', listCategory.length);
 
-const titleEl = document.querySelectorAll('.item h2');
-console.log('Category:', titleEl[0].textContent);
+listCategory.forEach(function (category) {
+ console.log('Category:', category.firstElementChild.textContent);
+ console.log('Elements:', category.lastElementChild.childElementCount);
+});
 
-const liEl = document.querySelectorAll('.item li');
-console.log('Elements:', liEl.length - 8);
+//const navLiEl = document.querySelectorAll('.item');
+//console.log('Number of categories:', navLiEl.length);
 
-console.log('Category:', titleEl[1].textContent);
-console.log('Elements:', liEl.length - 9);
+//const titleEl = document.querySelectorAll('.item h2');
+//console.log('Category:', titleEl[0].textContent);
 
-console.log('Category:', titleEl[2].textContent);
-console.log('Elements:', liEl.length - 7);
+//const liEl = document.querySelectorAll('.item li');
+//console.log('Elements:', liEl.length - 8);
+
+//console.log('Category:', titleEl[1].textContent);
+//console.log('Elements:', liEl.length - 9);
+
+//console.log('Category:', titleEl[2].textContent);
+//console.log('Elements:', liEl.length - 7);

@@ -1,15 +1,13 @@
 const input = document.querySelector('#validation-input');
 
-const lengthRef = Number(input.CDATA_SECTION_NODE.length);
+input.addEventListener('blur', checkSumbols);
 
-input.addEventListener('blur', onOutBlur);
-
-function onOutBlur() {
- if (input.value.length === lengthRef) {
+function checkSumbols() {
+ if (input.value.length === Number(input.dataset.length)) {
+  input.classList.add('valid');
   input.classList.remove('invalid');
-  return input.classList.add('valid');
  } else {
+  input.classList.add('invalid');
   input.classList.remove('valid');
-  return input.classList.add('invalid');
  }
 }
